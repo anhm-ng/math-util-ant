@@ -55,3 +55,46 @@ public class MathUtilDDTTest {
     
     
 }
+
+//CLASS NÀY SẼ CHỨA CODE DÙNG ĐỂ TEST CODE CHÍNH Ở BÊN CLASS MATHUTIL
+//CLASS NÀY SẼ CHỨA CODE DÙNG ĐỂ TEST HÀM getF() coi hàm chạy đúng kh
+//Code viết ra dùng để test code khác (hàm kahcs/class khác)
+//thì đoạn code này, class này đc gọi tên là: TEST SCRIPT
+//Trong test script sẽ có những tình huống xài app, đưa data cụ thể vào
+//chờ xem hàm xử lý kết quả có như kỳ vọng hay ko?
+//Một Test Script sẽ chứa nhiều TEST CASES
+//                          mỗi test case ứng với 1 tình huống xài hàm
+//Phân tích Test Script cũ - hôm qua kia
+//Trong Test Script cũ xuất hiện bad small, sự trùng lặp về câu lệnh dưới đây
+//Assert.assertEquals(720, MathUtil.getFactorial(6));
+//lệnh so sánh giá trị, lệnh gọi hàm đc lặp đi lặp lại một bộ test case
+
+//DDT - Data Driven Testing
+//Tách bộ data kiểm thử ra 1 chỗ
+//Lát hồi nhồi/nạp/fill/điền//feed data này tuần tự vào chỗ kiểm thử
+//Ví dụ tách data đã kiểm thử ở trên thành
+//1      0
+//1      1
+//2      2
+//6      3
+//24     4
+//120    5
+//720    6
+//Assert.assertEquals(720, MathUtil.getFactorial(6));
+//thay vì lệnh so sánh gọi viết cho từng case, ta biến lệnh này
+//trở thành tổng quát, ko điền data cụ thể, mà sẽ lấy từ đâu đó
+
+//Assert.assertEquals(???, MathUtil.getFactorial(???));
+
+//??? này sẽ lấy từ tập data ở trên!!!
+//code gọn hơn, đẹp hơn, dễ bảo trì hơn, kiểm soát được đủ thiếu các case
+//kĩ thuật tách code test ra khỏi data của nó lát hồi fill lại sau
+//đc GỌI LÀ KĨ THUẬT VIẾT TEST CASE THEO KIỂU THAM SỐ HÓA PARAMETERIZED
+//- BIẾN DATA RA 1 CHỖ, ĐẶT CHO CHÚNG CÁI TÊN BIẾN, LÁT HỒI NHỒI CHÚNG TRỞ LẠI LỆNH SO SÁNH
+//HOẶC CÒN GỌI LÀ DDT - DATA DRIVEN TESTING - VIẾT CODE KIỂM THỬ THEO STYLE TÁCH DATA
+//JUINT FW HỖ TRỢ SẴN TA VỤ TÁCH DATA, DUYỆT VÒNG FOR TRÊN DATA
+//NHỒI VÀO HÀM TƯƠNG ỨNG
+//ĐỂ CHƠI VỚI DDT, TA CẦN
+//- Tách data ra 1 chỗ - MẢNG
+//- Map cái data này vào các biến tương ứng
+//- Nhồi các biến tương ứng này vào các câu lệnh so sánh/họi hàm
